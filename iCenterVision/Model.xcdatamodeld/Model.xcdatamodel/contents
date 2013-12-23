@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ContactInfo" representedClassName="ContactInfo" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cell" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homePhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Patient" inverseName="contactInfo" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <entity name="Patient" representedClassName="Patient" syncable="YES">
+        <attribute name="firstName" attributeType="String" minValueString="2" maxValueString="50" syncable="YES"/>
+        <attribute name="identityNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" minValueString="2" maxValueString="50" syncable="YES"/>
+        <attribute name="photoPath" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contactInfo" maxCount="1" deletionRule="Cascade" destinationEntity="ContactInfo" inverseName="patient" inverseEntity="ContactInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ContactInfo" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Patient" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
